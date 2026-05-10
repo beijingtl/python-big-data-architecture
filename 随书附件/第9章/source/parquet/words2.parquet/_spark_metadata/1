@@ -1,0 +1,2 @@
+v1
+{"path":"file:///bigdata/test/pyspark/sink/parquet/words2.parquet/part-00000-a3dfcfe6-a3b6-4f84-ba06-dc55106cca79-c000.snappy.parquet","size":581,"isDir":false,"modificationTime":1627292719000,"blockReplication":1,"blockSize":33554432,"action":"add"}

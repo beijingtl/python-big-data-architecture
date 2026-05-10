@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "data-python-for-ga",
+  "private_key_id": "***********", // 请使用实际获得的JSON信息
+  "private_key": "***********",// 请使用实际获得的JSON信息
+  "client_email": "python-api-service@data-python-for-ga.iam.gserviceaccount.com",
+  "client_id": "***********",// 请使用实际获得的JSON信息
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/python-api-service%40data-python-for-ga.iam.gserviceaccount.com"
+}

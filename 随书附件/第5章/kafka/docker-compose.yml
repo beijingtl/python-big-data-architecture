@@ -1,0 +1,19 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    # build: . 
+    image: wurstmeister/kafka # 直接引用已构建好镜像可以加快构建速度
+    ports:
+      - "9092"
+    environment:
+      # modify the KAFKA_ADVERTISED_HOST_NAME in docker-compose.yml to match your docker host IP 
+      # (Note: Do not use localhost or 127.0.0.1 as the host ip if you want to run multiple brokers.)
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      # 如果想要添加一些自定义的环境变量，在这里添加即可。
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,76 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 2
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "ftpreader",
+          "parameter": {
+            "protocol": "sftp",
+            "host": "39.100.120.159",
+            "port": 22,
+            "username": "di_ds",
+            "password": "Gk948WjxispL",
+            "path": [
+              "/data/UFS_aws_recommendation/data/rec_details_recipe/*"
+            ],
+            "column": [
+              "*"
+            ],
+            "compress": "zip",
+            "encoding": "UTF-8",
+            "fieldDelimiter": ",",
+            "skipHeader": true,
+            "nullFormat": "",
+            "csvReaderConfig": {
+              "safetySwitch": false,
+              "skipEmptyRecords": false,
+              "useTextQualifier": false
+            }
+          }
+        },
+        "writer": {
+          "name": "hdfswriter",
+          "defaultFS": "hdfs://10.232.50.37:8020",
+          "fieldDelimiter": "\t",
+          "fileName": "rec_details_recipe",
+          "fileType": "text",
+          "path": "/user/hive/warehouse/raw_data.db/rec_details_recipe",
+          "writeMode": "append",
+          "parameter": {
+            "column": [
+              {
+                "name": "fullVisitorId",
+                "type": "STRING"
+              },
+              {
+                "name": "totals_time_on_site",
+                "type": "DOUBLE"
+              },
+              {
+                "name": "totals_bounces",
+                "type": "DOUBLE"
+              },
+              {
+                "name": "totals_time_on_screen",
+                "type": "DOUBLE"
+              },
+              {
+                "name": "totals_session_quality_dim",
+                "type": "BIGINT"
+              },
+              {
+                "name": "device_java_enabled",
+                "type": "BOOLEAN"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
